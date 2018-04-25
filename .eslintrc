@@ -1,0 +1,10 @@
+{
+  "extends": "rallycoding",
+  "rules": {
+    "no-underscore-dangle": 0,
+    "no-alert": 0
+  },
+  "globals": {
+    "alert": true
+  }
+}

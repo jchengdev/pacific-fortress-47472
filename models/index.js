@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 mongoose.set('debug', true);
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://dbuser:dbuser@ds125588.mlab.com:25588/warbler', {
+mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/warbler', {
   keepAlive: true
   //useMongoClient: true
 });

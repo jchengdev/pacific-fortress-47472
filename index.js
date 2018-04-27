@@ -43,6 +43,9 @@ app.get('/api/messages', loginRequired, async function (req, res, next) {
 app.get('/about', function (req, res, next) {
   res.sendFile(path.join(__dirname+'/about.html'));
 });
+app.get('/', function (req, res, next) {
+  res.sendFile(path.join(__dirname+'/help.html'));
+});
 
 // **useful error scenario handling
 app.use((req, res, next) => {

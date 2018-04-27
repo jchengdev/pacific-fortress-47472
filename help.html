@@ -9,7 +9,7 @@
           <ul>
             <li><strong>GET /</strong> -> API guide</li>
             <li><strong>GET /about</strong> -> Dev notes</li>
-            <li><strong>GET /api/messages</strong> -> retrieves all messages (signin JWT required)</li>
+            <li><strong>GET /api/messages</strong> -> retrieve all messages (signin JWT required)</li>
             <li><strong>POST /api/auth/signup</strong> -> body: { "username": "username", "email": "some@email.com", "password": "123456", "profileImageUrl": "https://someurl.com" } **JWT in response</li>
             <li><strong>POST /api/auth/signin</strong> -> body: { "email": "some@email.com", "password": "123456" } **JWT in response</li>
             <li><strong>POST /api/users/&lt;user_id>/messages/</strong> -> create a single message (signin JWT w/ authorization required)</li>

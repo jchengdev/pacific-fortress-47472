@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require("path");
 
 const errorHandler = require('./handlers/error');
 const authRoutes = require('./routes/auth');
@@ -36,6 +37,11 @@ app.get('/api/messages', loginRequired, async function (req, res, next) {
   } catch (err) {
     return next(err);
   }
+});
+
+//DEVELOPER NOTES PAGE
+app.get('/about', function (req, res, next) {
+  res.sendFile(path.join(__dirname+'/about.html'));
 });
 
 // **useful error scenario handling

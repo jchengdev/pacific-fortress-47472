@@ -33,7 +33,7 @@ FROM base as source
 RUN mkdir /node/app && chown -R node:node /node/app
 WORKDIR /node/app
 COPY --chown=node:node . .
-RUN sed -i "s/%%COMMIT_SHA%%/$SOURCE_COMMIT/g" ./about.html
+RUN sed -i "s~%%COMMIT_SHA%%~$SOURCE_COMMIT~g" ./about.html
 
 # FROM source as test 
 # ENV NODE_ENV=development 

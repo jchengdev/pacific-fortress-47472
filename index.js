@@ -1,3 +1,4 @@
+const http = require('http');
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -56,7 +57,8 @@ app.use((req, res, next) => {
 // **useful error scenario handling
 app.use(errorHandler);
 
-app.listen(PORT, () => {
+const server = http.createServer(app);
+server.listen(PORT, () => {
   console.log(`Server is starting on port ${PORT}`);
 });
 

@@ -1,8 +1,8 @@
 FROM node:14.16.0-alpine as base 
-ARG CREATED_DATE=not-set 
+ARG BUILD_DATE=not-set 
 ARG SOURCE_COMMIT=not-set 
 LABEL org.opencontainers.image.authors=jcheng.deveng@gmail.com
-LABEL org.opencontainers.image.created=$CREATED_DATE 
+LABEL org.opencontainers.image.created=$BUILD_DATE 
 LABEL org.opencontainers.image.revision=$SOURCE_COMMIT 
 LABEL org.opencontainers.image.title="Warbler API - Node+Express sample" 
 LABEL org.opencontainers.image.licenses=MIT 

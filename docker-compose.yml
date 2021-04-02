@@ -8,17 +8,12 @@ services:
       dockerfile: Dockerfile
       target: dev
       args:
-        CREATED_DATE: '$BUILD_DATE'
+        BUILD_DATE: '$BUILD_DATE'
         SOURCE_COMMIT: '$COMMIT'
     ports: 
       - 8081:8081 
     volumes: 
       - .:/node/app
       - /node/node_modules 
-    environment: 
-      - NODE_VERSION=14.16.0
-      - NODE_ENV=development
-      - DEBUG=*,-request:*
-      - DATABASE_URL=mongodb+srv://dbuser:dbuser@warbler.7zyux.mongodb.net/warbler?retryWrites=true&w=majority #same as "production", shouldn't be hardcoded here
-      - SECRET_KEY=some-key-to-use
-      - PORT=8081
+    env_file:
+      - ./.env
